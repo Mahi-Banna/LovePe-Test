@@ -2,65 +2,64 @@
 <html lang="en">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
     <title>LovePe - Find Your Companion</title>
 </head>
-<body class="bg-[#FAFAFA] text-[#1F2937] font-sans">
+<body class="bg-[#FFF5F6] text-[#1F2937] font-sans">
 
     <!-- Header -->
-    <nav class="p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-[#FF4B5C]">LovePe</h1>
-        <button class="bg-[#FF4B5C] text-white px-6 py-2 rounded-full font-semibold">Login</button>
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="text-3xl font-black text-[#FF4B5C] tracking-tighter">LOVEPE</h1>
+        <button class="bg-black text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition">Login</button>
     </nav>
 
     <!-- Hero Section -->
-    <div class="max-w-4xl mx-auto mt-20 text-center px-4">
-        <h2 class="text-5xl font-extrabold mb-6">Experience Moments, <br> Not Commitments.</h2>
-        <p class="text-xl mb-10 text-gray-600">Love On Rent - Your time, your choice, your connection.</p>
-        
-        <div class="flex justify-center gap-4">
-            <button class="bg-[#FF4B5C] text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:opacity-90">Find a Companion</button>
-            <button class="border border-[#FF4B5C] text-[#FF4B5C] px-8 py-4 rounded-full text-lg font-bold">Register as Partner</button>
-        </div>
+    <div class="max-w-4xl mx-auto mt-16 text-center px-4">
+        <h2 class="text-6xl font-extrabold mb-6 leading-tight">Experience Moments,<br><span class="text-[#FF4B5C]">Not Commitments.</span></h2>
+        <p class="text-xl mb-10 text-gray-600 font-medium">Love On Rent - Your time, your choice, your connection.</p>
     </div>
-<!-- Profile Section -->
-    <div class="max-w-6xl mx-auto mt-16 p-4">
-        <h3 class="text-3xl font-bold mb-8 text-center">Available Companions</h3>
+
+    <!-- Profiles Section -->
+    <div class="max-w-6xl mx-auto mt-10 p-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Profile Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-center">Priya Sharma</h4>
-                <p class="text-gray-500 text-center mb-4">📍 Mumbai</p>
-                <div class="border-t pt-4">
-                    <p class="font-semibold">Dinner Date: <span class="text-[#FF4B5C]">₹1500/hr</span></p>
-                    <button class="w-full mt-4 bg-black text-white py-2 rounded-lg">View Profile</button>
+            <!-- Card 1 -->
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <h4 class="text-xl font-bold">Priya Sharma</h4>
+                <p class="text-sm text-gray-500 mb-4">📍 Mumbai | Event Companion</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-[#FF4B5C] font-bold text-lg">₹1500/hr</span>
+                    <button class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
                 </div>
             </div>
 
-            <!-- Profile Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-center">Rahul Verma</h4>
-                <p class="text-gray-500 text-center mb-4">📍 Delhi</p>
-                <div class="border-t pt-4">
-                    <p class="font-semibold">Tour Guide: <span class="text-[#FF4B5C]">₹2000/hr</span></p>
-                    <button class="w-full mt-4 bg-black text-white py-2 rounded-lg">View Profile</button>
+            <!-- Card 2 -->
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <h4 class="text-xl font-bold">Rahul Verma</h4>
+                <p class="text-sm text-gray-500 mb-4">📍 Delhi | Movie Partner</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-[#FF4B5C] font-bold text-lg">₹2000/hr</span>
+                    <button class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
                 </div>
             </div>
 
-            <!-- Profile Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h4 class="text-xl font-bold text-center">Sneha Singh</h4>
-                <p class="text-gray-500 text-center mb-4">📍 Bangalore</p>
-                <div class="border-t pt-4">
-                    <p class="font-semibold">Movie Partner: <span class="text-[#FF4B5C]">₹1200/hr</span></p>
-                    <button class="w-full mt-4 bg-black text-white py-2 rounded-lg">View Profile</button>
+            <!-- Card 3 -->
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
+                <h4 class="text-xl font-bold">Sneha Singh</h4>
+                <p class="text-sm text-gray-500 mb-4">📍 Bangalore | Dinner Date</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-[#FF4B5C] font-bold text-lg">₹1200/hr</span>
+                    <button class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
                 </div>
             </div>
 
         </div>
     </div>
+
 </body>
 </html>
