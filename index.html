@@ -62,4 +62,28 @@
     </div>
 
 </body>
+    <!-- Modal (Hidden by default) -->
+<div id="bookingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div class="bg-white p-8 rounded-3xl w-full max-w-md shadow-2xl">
+        <h2 class="text-2xl font-bold mb-4">Book Your Companion</h2>
+        <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-xl">
+        <input type="date" class="w-full p-3 mb-4 border rounded-xl">
+        <select class="w-full p-3 mb-4 border rounded-xl">
+            <option>Dinner Date</option>
+            <option>Movie</option>
+            <option>Coffee/Meetup</option>
+        </select>
+        <div class="flex gap-4">
+            <button onclick="toggleModal()" class="w-1/2 p-3 border rounded-xl">Cancel</button>
+            <button class="w-1/2 p-3 bg-[#FF4B5C] text-white rounded-xl font-bold">Confirm Booking</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to handle the Modal -->
+<script>
+    function toggleModal() {
+        document.getElementById('bookingModal').classList.toggle('hidden');
+    }
+</script>
 </html>
