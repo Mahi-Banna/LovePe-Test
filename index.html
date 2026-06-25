@@ -9,81 +9,73 @@
 </head>
 <body class="bg-[#FFF5F6] text-[#1F2937] font-sans">
 
-    <!-- Header -->
     <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
         <h1 class="text-3xl font-black text-[#FF4B5C] tracking-tighter">LOVEPE</h1>
         <button class="bg-black text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition">Login</button>
     </nav>
 
-    <!-- Hero Section -->
     <div class="max-w-4xl mx-auto mt-16 text-center px-4">
         <h2 class="text-6xl font-extrabold mb-6 leading-tight">Experience Moments,<br><span class="text-[#FF4B5C]">Not Commitments.</span></h2>
         <p class="text-xl mb-10 text-gray-600 font-medium">Love On Rent - Your time, your choice, your connection.</p>
     </div>
 
-    <!-- Profiles Section -->
     <div class="max-w-6xl mx-auto mt-10 p-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Card 1 -->
-            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                 <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h4 class="text-xl font-bold">Priya Sharma</h4>
                 <p class="text-sm text-gray-500 mb-4">📍 Mumbai | Event Companion</p>
                 <div class="flex justify-between items-center border-t pt-4">
                     <span class="text-[#FF4B5C] font-bold text-lg">₹1500/hr</span>
-                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
+                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold hover:bg-[#ff3344] transition">Hire Now</button>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                 <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h4 class="text-xl font-bold">Rahul Verma</h4>
                 <p class="text-sm text-gray-500 mb-4">📍 Delhi | Movie Partner</p>
                 <div class="flex justify-between items-center border-t pt-4">
                     <span class="text-[#FF4B5C] font-bold text-lg">₹2000/hr</span>
-                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
+                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold hover:bg-[#ff3344] transition">Hire Now</button>
                 </div>
             </div>
 
-            <!-- Card 3 -->
-            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition">
+            <div class="glass p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=500&fit=crop" class="w-full h-64 object-cover rounded-2xl mb-4">
                 <h4 class="text-xl font-bold">Sneha Singh</h4>
                 <p class="text-sm text-gray-500 mb-4">📍 Bangalore | Dinner Date</p>
                 <div class="flex justify-between items-center border-t pt-4">
                     <span class="text-[#FF4B5C] font-bold text-lg">₹1200/hr</span>
-                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold">Hire Now</button>
+                    <button onclick="toggleModal()" class="bg-[#FF4B5C] text-white px-4 py-2 rounded-xl font-bold hover:bg-[#ff3344] transition">Hire Now</button>
                 </div>
             </div>
 
         </div>
     </div>
 
-</body>
-    <!-- Modal (Hidden by default) -->
-<div id="bookingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white p-8 rounded-3xl w-full max-w-md shadow-2xl">
-        <h2 class="text-2xl font-bold mb-4">Book Your Companion</h2>
-        <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-xl">
-        <input type="date" class="w-full p-3 mb-4 border rounded-xl">
-        <select class="w-full p-3 mb-4 border rounded-xl">
-            <option>Dinner Date</option>
-            <option>Movie</option>
-            <option>Coffee/Meetup</option>
-        </select>
-        <div class="flex gap-4">
-            <button onclick="toggleModal()" class="w-1/2 p-3 border rounded-xl">Cancel</button>
-            <button class="w-1/2 p-3 bg-[#FF4B5C] text-white rounded-xl font-bold">Confirm Booking</button>
+    <div id="bookingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white p-8 rounded-3xl w-full max-w-md shadow-2xl">
+            <h2 class="text-2xl font-bold mb-4">Book Your Companion</h2>
+            <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-xl">
+            <input type="date" class="w-full p-3 mb-4 border rounded-xl">
+            <select class="w-full p-3 mb-4 border rounded-xl">
+                <option>Dinner Date</option>
+                <option>Movie</option>
+                <option>Coffee/Meetup</option>
+            </select>
+            <div class="flex gap-4">
+                <button onclick="toggleModal()" class="w-1/2 p-3 border rounded-xl hover:bg-gray-50 transition">Cancel</button>
+                <button class="w-1/2 p-3 bg-[#FF4B5C] text-white rounded-xl font-bold hover:bg-[#ff3344] transition">Confirm Booking</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- JavaScript to handle the Modal -->
-<script>
-    function toggleModal() {
-        document.getElementById('bookingModal').classList.toggle('hidden');
-    }
-</script>
+    <script>
+        function toggleModal() {
+            document.getElementById('bookingModal').classList.toggle('hidden');
+        }
+    </script>
+</body>
 </html>
