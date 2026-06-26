@@ -2,40 +2,38 @@
 <html lang="en">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <title>LovePe | Global Connection</title>
+    <title>LovePe | Choose Your Path</title>
 </head>
-<body class="bg-gray-50 flex h-screen">
+<body class="bg-[#FFF5F6] h-screen flex flex-col justify-center items-center">
 
-    <!-- Sidebar (Desktop) -->
-    <nav class="w-20 lg:w-64 border-r bg-white p-6 flex flex-col justify-between hidden md:flex">
-        <div>
-            <h1 class="text-2xl font-black text-[#FF4B5C] mb-10">LOVEPE</h1>
-            <ul class="space-y-6">
-                <li class="font-bold text-lg cursor-pointer"><i class="fas fa-home mr-3"></i><span class="hidden lg:inline">Home</span></li>
-                <li class="font-bold text-lg cursor-pointer"><i class="fas fa-search mr-3"></i><span class="hidden lg:inline">Explore</span></li>
-                <li class="font-bold text-lg cursor-pointer"><i class="fas fa-heart mr-3"></i><span class="hidden lg:inline">Content</span></li>
-                <li class="font-bold text-lg cursor-pointer"><i class="fas fa-user mr-3"></i><span class="hidden lg:inline">Profile</span></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="flex-1 overflow-y-auto p-6">
-        <!-- यहाँ हम हर पेज (Chat, Explore, Profile) डायनामिक तरीके से लोड करेंगे -->
-        <h2 class="text-3xl font-bold">Welcome to the New Era of LovePe</h2>
-        <div id="content" class="mt-8">
-            <!-- डायनामिक कंटेंट यहाँ आएगा -->
-        </div>
-    </main>
-
-    <!-- Bottom Nav (Mobile) -->
-    <div class="md:hidden fixed bottom-0 w-full bg-white border-t p-4 flex justify-around text-2xl">
-        <i class="fas fa-home"></i>
-        <i class="fas fa-search"></i>
-        <i class="fas fa-plus-circle text-[#FF4B5C]"></i>
-        <i class="fas fa-user"></i>
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-black text-[#FF4B5C] mb-4">LOVEPE</h1>
+        <p class="text-gray-600 text-lg">Choose how you want to start your journey</p>
     </div>
 
+    <div class="grid md:grid-cols-2 gap-8 w-full max-w-4xl px-6">
+        <!-- Option 1: Rent Now -->
+        <div onclick="selectRole('seeker')" class="bg-white p-10 rounded-3xl shadow-xl cursor-pointer hover:border-4 border-[#FF4B5C] transition text-center">
+            <div class="text-6xl mb-6">🔍</div>
+            <h2 class="text-3xl font-bold mb-4">Rent Now</h2>
+            <p class="text-gray-500 mb-6">I want to find and hire a companion for my needs.</p>
+        </div>
+
+        <!-- Option 2: List Your Profile -->
+        <div onclick="selectRole('provider')" class="bg-white p-10 rounded-3xl shadow-xl cursor-pointer hover:border-4 border-[#FF4B5C] transition text-center">
+            <div class="text-6xl mb-6">✨</div>
+            <h2 class="text-3xl font-bold mb-4">List Your Profile</h2>
+            <p class="text-gray-500 mb-6">I want to be hired and earn by offering my services.</p>
+        </div>
+    </div>
+
+    <!-- Firebase Script Placeholder -->
+    <script>
+        function selectRole(role) {
+            localStorage.setItem('userRole', role);
+            alert("Great! You selected: " + role + ". Now let's build your profile.");
+            // यहाँ से प्रोफाइल बिल्डिंग पेज पर रिडायरेक्ट करेंगे
+        }
+    </script>
 </body>
 </html>
