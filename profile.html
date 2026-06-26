@@ -39,5 +39,15 @@
             window.location.href = "index.html"; // वापस होमपेज पर भेज देगा
         });
     </script>
+    const db = getFirestore(initializeApp(firebaseConfig));
+
+        document.getElementById('saveBtn').addEventListener('click', async () => {
+            const name = document.getElementById('name').value;
+            const rate = document.getElementById('rate').value;
+            const service = document.getElementById('service').value;
+
+            await addDoc(collection(db, "profiles"), { name, rate, service });
+            alert("Profile Saved to Database!");
+            window.location.href = "index.html";
 </body>
 </html>
