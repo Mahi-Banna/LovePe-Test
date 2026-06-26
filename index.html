@@ -2,59 +2,46 @@
 <html lang="en">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>LovePe | Choose Your Path</title>
+    <title>LovePe | World Class Dating</title>
 </head>
-<body class="bg-[#FFF5F6] h-screen flex flex-col justify-center items-center">
+<body class="bg-[#FFF5F6]">
 
-    <div class="text-center mb-12">
-        <h1 class="text-5xl font-black text-[#FF4B5C] mb-4">LOVEPE</h1>
-        <p class="text-gray-600 text-lg">Choose how you want to start your journey</p>
-    </div>
+    <!-- यहाँ आपका UI (जो हमने बनाया था) आएगा -->
+    
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    <div class="grid md:grid-cols-2 gap-8 w-full max-w-4xl px-6">
-        <!-- Option 1: Rent Now -->
-        <div onclick="selectRole('seeker')" class="bg-white p-10 rounded-3xl shadow-xl cursor-pointer hover:border-4 border-[#FF4B5C] transition text-center">
-            <div class="text-6xl mb-6">🔍</div>
-            <h2 class="text-3xl font-bold mb-4">Rent Now</h2>
-            <p class="text-gray-500 mb-6">I want to find and hire a companion for my needs.</p>
-        </div>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2P_4MI9Ob7tjaXuw7OqbJglod-i2rL48",
+            authDomain: "lovepe.firebaseapp.com",
+            projectId: "lovepe",
+            storageBucket: "lovepe.firebasestorage.app",
+            messagingSenderId: "386724437447",
+            appId: "1:386724437447:web:f9de9b221d91e8990acde2",
+            measurementId: "G-W27T2CM4H8"
+        };
 
-        <!-- Option 2: List Your Profile -->
-        <div onclick="selectRole('provider')" class="bg-white p-10 rounded-3xl shadow-xl cursor-pointer hover:border-4 border-[#FF4B5C] transition text-center">
-            <div class="text-6xl mb-6">✨</div>
-            <h2 class="text-3xl font-bold mb-4">List Your Profile</h2>
-            <p class="text-gray-500 mb-6">I want to be hired and earn by offering my services.</p>
-        </div>
-    </div>
-
-    <!-- Firebase Script Placeholder -->
-    <script>
-        function selectRole(role) {
-            localStorage.setItem('userRole', role);
-            alert("Great! You selected: " + role + ". Now let's build your profile.");
-            // यहाँ से प्रोफाइल बिल्डिंग पेज पर रिडायरेक्ट करेंगे
-        }
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        console.log("LovePe Firebase Connected Successfully!");
+        
+        // अब हम यहाँ एक function बनाएंगे जिससे यूजर की प्रोफाइल डेटाबेस में जाएगी
+        window.saveProfile = async (name, rate, service) => {
+            try {
+                await addDoc(collection(db, "profiles"), {
+                    name: name,
+                    rate: rate,
+                    service: service,
+                    createdAt: new Date()
+                });
+                alert("Profile Created Successfully!");
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        };
     </script>
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyC2P_4MI9Ob7tjaXuw7OqbJglod-i2rL48",
-  authDomain: "lovepe.firebaseapp.com",
-  projectId: "lovepe",
-  storageBucket: "lovepe.firebasestorage.app",
-  messagingSenderId: "386724437447",
-  appId: "1:386724437447:web:f9de9b221d91e8990acde2",
-  measurementId: "G-W27T2CM4H8"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 </body>
 </html>
