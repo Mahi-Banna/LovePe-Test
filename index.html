@@ -43,7 +43,15 @@
   const firebaseConfig = {
     // PASTE FIREBASE CONFIG HERE
   };
+rules_version = '2';
 
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   console.log("LovePe Connected to Firebase!");
