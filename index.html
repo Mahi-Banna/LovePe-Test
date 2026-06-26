@@ -35,5 +35,18 @@
             // यहाँ से प्रोफाइल बिल्डिंग पेज पर रिडायरेक्ट करेंगे
         }
     </script>
+    <!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    // PASTE FIREBASE CONFIG HERE
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  console.log("LovePe Connected to Firebase!");
+</script>
 </body>
 </html>
