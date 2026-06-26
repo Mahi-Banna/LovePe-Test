@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create Profile | LovePe</title>
+</head>
+<body class="bg-[#FFF5F6] p-6">
+    <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl">
+        <h2 class="text-2xl font-bold mb-6">Complete Your Profile</h2>
+        <input type="text" id="name" placeholder="Full Name" class="w-full p-3 mb-4 border rounded-xl">
+        <input type="number" id="rate" placeholder="Rate per hour (₹)" class="w-full p-3 mb-4 border rounded-xl">
+        <select id="service" class="w-full p-3 mb-4 border rounded-xl">
+            <option>Dinner Date</option>
+            <option>Movie Partner</option>
+            <option>Tour Guide</option>
+        </select>
+        <button id="saveBtn" class="w-full bg-[#FF4B5C] text-white py-3 rounded-xl font-bold">Save Profile</button>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2P_4MI9Ob7tjaXuw7OqbJglod-i2rL48",
+            projectId: "lovepe",
+            // बाकी वही पुरानी Config डिटेल्स यहाँ डालें
+        };
+
+        const db = getFirestore(initializeApp(firebaseConfig));
+
+        document.getElementById('saveBtn').addEventListener('click', async () => {
+            const name = document.getElementById('name').value;
+            const rate = document.getElementById('rate').value;
+            const service = document.getElementById('service').value;
+
+            await addDoc(collection(db, "profiles"), { name, rate, service });
+            alert("Profile Saved!");
+            window.location.href = "index.html"; // वापस होमपेज पर भेज देगा
+        });
+    </script>
+</body>
+</html>
